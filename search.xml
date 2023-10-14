@@ -86,9 +86,9 @@
       
         <tags>
             
-            <tag> Github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
@@ -230,37 +230,6 @@
     
     
     <entry>
-      <title>碧蓝航线Spine动态立绘提取</title>
-      <link href="/posts/5b611d7e.html"/>
-      <url>/posts/5b611d7e.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>用mumu模拟器演示文件获取过程<br>参考：<a href="https://www.bilibili.com/read/cv18073492/">如何提取、导出碧蓝档案中的Live2D (Spine与Live2DViewerEX)</a></p></blockquote><p>需要软件：<a href="https://github.com/Perfare/AssetStudio">AssetStudio.net472</a> ； <a href="https://pan.baidu.com/s/1_-r1nvmmkgJsiCVPtB4ZNg?pwd=1024">Spine v3.8.X</a> ； <a href="http://live2d.pavostudio.com/doc/zh-cn/">Live2DViewerEX（需Steam购买）</a></p><h2 id="在-Spine-中使用"><a href="#在-Spine-中使用" class="headerlink" title="在 Spine 中使用"></a>在 Spine 中使用</h2><h3 id="整合素材"><a href="#整合素材" class="headerlink" title="整合素材"></a>整合素材</h3><ul><li><p>确保已下载游戏完整资源</p></li><li><p>碧蓝live2d文件位置：<code>本地\sdcard\Android\data\com.bilibili.azurlane(或blhx)\files\AssetBundles\spinepainting</code>内，角色名字按拼音<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_1.webp" alt=""></p></li></ul><p>找到你想要的文件，如约克城Ⅱ（原皮）的系列前缀文件<code>yuekechengii</code>和<code>yuekechengii_res</code>，复制粘贴到<code>MuMu共享文件夹</code></p><ul><li>打开<code>AssetStudio</code>，导入刚刚复制出文件的文件夹，注意是<code>Load Folder（导入文件夹）</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_2.webp" alt=""></li></ul><p>当看到<code>Scene Hierarchy</code>下有文件，下方进度条变绿显示<code>Finished</code>即完成，可以点击<code>Asset List（资源列表）</code>查看成果</p><p>点击<code>All Asseted（全部导出）</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_3.webp" alt=""></p><p>完成后会获得以下三个文件夹，其中<code>MonoBehaviour</code>不需要，<code>TextAsset</code>和<code>Texture2D</code>才是我们需要处理的文件夹<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_4.webp" alt=""></p><ul><li>在<code>TextAsset</code>的路径栏内输入<code>cmd</code>后点击<code>Enter</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_5.webp" alt=""></li></ul><p>然后在cmd程序内执行<code>ren *.asset *.</code>（删除所有.asset后缀）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_6.png" alt=""></p><p>然后把<code>TextAsset</code>和<code>Texture2D</code>文件夹内的文件放在一起<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_7.webp" alt=""></p><h3 id="处理贴图与骨骼"><a href="#处理贴图与骨骼" class="headerlink" title="处理贴图与骨骼"></a>处理贴图与骨骼</h3><ul><li>打开Spine新建项目</li><li>导入骨骼数据<br>文件位置选择刚刚新建的文件夹，选中<code>skel文件</code>导入，这里先解决<code>yukechengIIB</code></li></ul><blockquote><p>可以看到yukechengII被分成了B/M/T三部分，注意各部分一一对应不要弄错！</p></blockquote><p><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_8.png" alt=""><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_9.webp" alt=""></p><p><code>保存更改</code>点击<code>放弃更改</code>；<code>导入警告</code>不用管，直接点击<code>确定</code>；这时可以看到一堆缺失贴图，不用管<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_10.webp" alt=""></p><ul><li><p>拆解贴图<br>选择<code>纹理解包器</code>，解包到指定的文件夹（<code>不同部分的贴图</code>必须分<code>不同文件夹</code>）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_11.webp" alt=""><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_12.webp" alt=""></p></li><li><p>导入拆解贴图<br>在右侧层级树面板点击<code>图片</code>，点击右下角的<code>路径</code>，选择刚刚导出贴图的文件夹（如果出现<code>已经重新调整图片大小</code>，点击<code>否</code>）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_13.webp" alt=""></p></li></ul><p>可以看到背景部分导入成功<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_14.webp" alt=""></p><p>按照上面的方法接着导入<code>yukechengIIM</code>与<code>yukechengIIT</code>的部分，导入数据时选择<code>创建一个新骨架</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_15.webp" alt=""></p><p>B/M/T全部导入完成<br>可以发现<code>M是人物模型</code>，<code>B是背景模型</code>，<code>T是特效模型</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_16.webp" alt=""></p><h3 id="预览-Live2d-动画"><a href="#预览-Live2d-动画" class="headerlink" title="预览 Live2d 动画"></a>预览 Live2d 动画</h3><p>点击左上角的<code>设置</code>，转为<code>动画</code>模式<br><code>摄影表</code>中的<code>normal</code>为当前正在处理的动作，点击右三角正向预览<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_17.webp" alt=""></p><p>切换预览动作可以在<code>层级树</code>菜单中打开<code>动画</code>，把要预览的动画左边的小点点点亮，此时摄影表中的预览动作名就变了，预览即可<br>然鹅这里只有一个动作（<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_18.webp" alt=""></p><h3 id="导出-Live2d-动画为视频格式"><a href="#导出-Live2d-动画为视频格式" class="headerlink" title="导出 Live2d 动画为视频格式"></a>导出 Live2d 动画为视频格式</h3><p>打开导出面板<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_19.webp" alt=""></p><p>选择<code>视频</code>，选择<code>AVI</code>或<code>MOV（可以透明底）</code>格式<br>比较重要的是圈出来的数值，别的根据需要调整，点击<code>预览</code>可查看<br>也可以点击<code>图片</code>，选择<code>PNG</code>序列导出，处理方式去网上找<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_21.webp" alt=""></p><p>调整完数值后点击<code>导出</code>，导出时长根据文件大小和电脑性能而定</p><h2 id="在-Live2DViewerEX-中使用"><a href="#在-Live2DViewerEX-中使用" class="headerlink" title="在 Live2DViewerEX 中使用"></a>在 Live2DViewerEX 中使用</h2><p>创建一个新的文件夹，把B/M/T三部分文件复制粘贴放入<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_2.webp" alt=""></p><p>用steam打开<code>Live2DViewerEX</code>，选择<code>EX工作室</code><br>在<code>创作工具</code>中打开<code>Spine编辑器</code>，点击<code>选择模型文件</code>，选择刚刚创建的文件夹<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_1.webp" alt=""><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_3.webp" alt=""></p><p>打开后可能啥都没有，但先别急，分别创建B/M/T三部分的L2D配置文件<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_4.webp" alt=""></p><p>点击根据M部分创建的<code>json文件</code>，再调整下位置就可以看到约太太啦<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_5.webp" alt=""></p><p>因为碧蓝航线的动态立绘是分别由三个json文件控制的，同时只能显示一个<br><code>动画</code>页面可以点击查看动作<br><code>插槽</code>页面可以控制图层透明度</p><p>回到<code>编辑Json-&gt;动作</code>，添加一个动作组，在动作组里再添加动作，选<code>normal</code>动画，记得保存<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_6.webp" alt=""></p><p>启动<code>Live2DViewerEX</code>的<code>控制面板</code>，导入刚刚创建的Json文件<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_7.webp" alt=""></p><p>双击加载后应该在桌面能看到播放待机动画的约太太了（看不见要调整位置）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_8.webp" alt=""></p><p>可以通过同样的方法把另外两个图层也导进来，Live2DViewerEX支持同时显示8个模型（点击上方数字切换图层）</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 技术分享 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Live2d </tag>
-            
-            <tag> Spine </tag>
-            
-            <tag> 游戏解包 </tag>
-            
-            <tag> 游戏相关 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>碧蓝航线live2d模型提取</title>
       <link href="/posts/1700e4fb.html"/>
       <url>/posts/1700e4fb.html</url>
@@ -282,6 +251,37 @@
             <tag> 游戏解包 </tag>
             
             <tag> 游戏相关 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>碧蓝航线Spine动态立绘提取</title>
+      <link href="/posts/5b611d7e.html"/>
+      <url>/posts/5b611d7e.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>用mumu模拟器演示文件获取过程<br>参考：<a href="https://www.bilibili.com/read/cv18073492/">如何提取、导出碧蓝档案中的Live2D (Spine与Live2DViewerEX)</a></p></blockquote><p>需要软件：<a href="https://github.com/Perfare/AssetStudio">AssetStudio.net472</a> ； <a href="https://pan.baidu.com/s/1_-r1nvmmkgJsiCVPtB4ZNg?pwd=1024">Spine v3.8.X</a> ； <a href="http://live2d.pavostudio.com/doc/zh-cn/">Live2DViewerEX（需Steam购买）</a></p><h2 id="在-Spine-中使用"><a href="#在-Spine-中使用" class="headerlink" title="在 Spine 中使用"></a>在 Spine 中使用</h2><h3 id="整合素材"><a href="#整合素材" class="headerlink" title="整合素材"></a>整合素材</h3><ul><li><p>确保已下载游戏完整资源</p></li><li><p>碧蓝live2d文件位置：<code>本地\sdcard\Android\data\com.bilibili.azurlane(或blhx)\files\AssetBundles\spinepainting</code>内，角色名字按拼音<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_1.webp" alt=""></p></li></ul><p>找到你想要的文件，如约克城Ⅱ（原皮）的系列前缀文件<code>yuekechengii</code>和<code>yuekechengii_res</code>，复制粘贴到<code>MuMu共享文件夹</code></p><ul><li>打开<code>AssetStudio</code>，导入刚刚复制出文件的文件夹，注意是<code>Load Folder（导入文件夹）</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_2.webp" alt=""></li></ul><p>当看到<code>Scene Hierarchy</code>下有文件，下方进度条变绿显示<code>Finished</code>即完成，可以点击<code>Asset List（资源列表）</code>查看成果</p><p>点击<code>All Asseted（全部导出）</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_3.webp" alt=""></p><p>完成后会获得以下三个文件夹，其中<code>MonoBehaviour</code>不需要，<code>TextAsset</code>和<code>Texture2D</code>才是我们需要处理的文件夹<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_4.webp" alt=""></p><ul><li>在<code>TextAsset</code>的路径栏内输入<code>cmd</code>后点击<code>Enter</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_5.webp" alt=""></li></ul><p>然后在cmd程序内执行<code>ren *.asset *.</code>（删除所有.asset后缀）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_6.png" alt=""></p><p>然后把<code>TextAsset</code>和<code>Texture2D</code>文件夹内的文件放在一起<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_7.webp" alt=""></p><h3 id="处理贴图与骨骼"><a href="#处理贴图与骨骼" class="headerlink" title="处理贴图与骨骼"></a>处理贴图与骨骼</h3><ul><li>打开Spine新建项目</li><li>导入骨骼数据<br>文件位置选择刚刚新建的文件夹，选中<code>skel文件</code>导入，这里先解决<code>yukechengIIB</code></li></ul><blockquote><p>可以看到yukechengII被分成了B/M/T三部分，注意各部分一一对应不要弄错！</p></blockquote><p><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_8.png" alt=""><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_9.webp" alt=""></p><p><code>保存更改</code>点击<code>放弃更改</code>；<code>导入警告</code>不用管，直接点击<code>确定</code>；这时可以看到一堆缺失贴图，不用管<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_10.webp" alt=""></p><ul><li><p>拆解贴图<br>选择<code>纹理解包器</code>，解包到指定的文件夹（<code>不同部分的贴图</code>必须分<code>不同文件夹</code>）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_11.webp" alt=""><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_12.webp" alt=""></p></li><li><p>导入拆解贴图<br>在右侧层级树面板点击<code>图片</code>，点击右下角的<code>路径</code>，选择刚刚导出贴图的文件夹（如果出现<code>已经重新调整图片大小</code>，点击<code>否</code>）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_13.webp" alt=""></p></li></ul><p>可以看到背景部分导入成功<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_14.webp" alt=""></p><p>按照上面的方法接着导入<code>yukechengIIM</code>与<code>yukechengIIT</code>的部分，导入数据时选择<code>创建一个新骨架</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_15.webp" alt=""></p><p>B/M/T全部导入完成<br>可以发现<code>M是人物模型</code>，<code>B是背景模型</code>，<code>T是特效模型</code><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_16.webp" alt=""></p><h3 id="预览-Live2d-动画"><a href="#预览-Live2d-动画" class="headerlink" title="预览 Live2d 动画"></a>预览 Live2d 动画</h3><p>点击左上角的<code>设置</code>，转为<code>动画</code>模式<br><code>摄影表</code>中的<code>normal</code>为当前正在处理的动作，点击右三角正向预览<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_17.webp" alt=""></p><p>切换预览动作可以在<code>层级树</code>菜单中打开<code>动画</code>，把要预览的动画左边的小点点点亮，此时摄影表中的预览动作名就变了，预览即可<br>然鹅这里只有一个动作（<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_18.webp" alt=""></p><h3 id="导出-Live2d-动画为视频格式"><a href="#导出-Live2d-动画为视频格式" class="headerlink" title="导出 Live2d 动画为视频格式"></a>导出 Live2d 动画为视频格式</h3><p>打开导出面板<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_19.webp" alt=""></p><p>选择<code>视频</code>，选择<code>AVI</code>或<code>MOV（可以透明底）</code>格式<br>比较重要的是圈出来的数值，别的根据需要调整，点击<code>预览</code>可查看<br>也可以点击<code>图片</code>，选择<code>PNG</code>序列导出，处理方式去网上找<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxspine_21.webp" alt=""></p><p>调整完数值后点击<code>导出</code>，导出时长根据文件大小和电脑性能而定</p><h2 id="在-Live2DViewerEX-中使用"><a href="#在-Live2DViewerEX-中使用" class="headerlink" title="在 Live2DViewerEX 中使用"></a>在 Live2DViewerEX 中使用</h2><p>创建一个新的文件夹，把B/M/T三部分文件复制粘贴放入<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_2.webp" alt=""></p><p>用steam打开<code>Live2DViewerEX</code>，选择<code>EX工作室</code><br>在<code>创作工具</code>中打开<code>Spine编辑器</code>，点击<code>选择模型文件</code>，选择刚刚创建的文件夹<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_1.webp" alt=""><br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_3.webp" alt=""></p><p>打开后可能啥都没有，但先别急，分别创建B/M/T三部分的L2D配置文件<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_4.webp" alt=""></p><p>点击根据M部分创建的<code>json文件</code>，再调整下位置就可以看到约太太啦<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_5.webp" alt=""></p><p>因为碧蓝航线的动态立绘是分别由三个json文件控制的，同时只能显示一个<br><code>动画</code>页面可以点击查看动作<br><code>插槽</code>页面可以控制图层透明度</p><p>回到<code>编辑Json-&gt;动作</code>，添加一个动作组，在动作组里再添加动作，选<code>normal</code>动画，记得保存<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_6.webp" alt=""></p><p>启动<code>Live2DViewerEX</code>的<code>控制面板</code>，导入刚刚创建的Json文件<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_7.webp" alt=""></p><p>双击加载后应该在桌面能看到播放待机动画的约太太了（看不见要调整位置）<br><img src="https://picbed.zeroqsm.top/post/blhxspine/blhxsl_8.webp" alt=""></p><p>可以通过同样的方法把另外两个图层也导进来，Live2DViewerEX支持同时显示8个模型（点击上方数字切换图层）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Live2d </tag>
+            
+            <tag> 游戏解包 </tag>
+            
+            <tag> 游戏相关 </tag>
+            
+            <tag> Spine </tag>
             
         </tags>
       
@@ -333,9 +333,9 @@
       
         <tags>
             
-            <tag> Github </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
