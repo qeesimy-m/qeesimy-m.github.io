@@ -77,24 +77,59 @@ var anzhiyu = {
         document.getElementById("waterfall").classList.add("show");
       }, 500);
   },
-  commentText: function (e) {
-    if (e == "undefined" || e == "null") e = "好棒！";
-    var n = document.getElementsByClassName("el-textarea__inner")[0],
-      t = document.createEvent("HTMLEvents");
-    if (!n) return;
-    t.initEvent("input", !0, !0);
-    var o = replaceAll(e, "\n", "\n> ");
-    (n.value = "> " + o + "\n\n"), n.dispatchEvent(t);
-    var i = document.querySelector("#post-comment").offsetTop;
-    window.scrollTo(0, i - 80),
-      n.focus(),
-      n.setSelectionRange(-1, -1),
-      document.getElementById("comment-tips") && document.getElementById("comment-tips").classList.add("show");
+  commentText: function (txt) {
+    const postCommentDom = document.querySelector("#post-comment");
+    var domTop = postCommentDom.offsetTop;
+    window.scrollTo(0, domTop - 80);
+    if (txt == "undefined" || txt == "null") txt = "好棒！";
+    function setText() {
+      setTimeout(() => {
+        var input = document.getElementsByClassName("el-textarea__inner")[0];
+        if (!input) setText();
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("input", true, true);
+        let inputValue = replaceAll(txt, "\n", "\n> ");
+        input.value = "> " + inputValue + "\n\n";
+        input.dispatchEvent(evt);
+        input.focus();
+        input.setSelectionRange(-1, -1);
+        if (document.getElementById("comment-tips")) {
+          document.getElementById("comment-tips").classList.add("show");
+        }
+      }, 100);
+    }
+    setText();
+  },
+  initIndexEssay: function () {
+    setTimeout(() => {
+      let essay_bar_swiper = new Swiper(".essay_bar_swiper_container", {
+        passiveListeners: true,
+        direction: "vertical",
+        loop: true,
+        autoplay: {
+          disableOnInteraction: true,
+          delay: 3000,
+        },
+        mousewheel: true,
+      });
+
+      let essay_bar_comtainer = document.getElementById("bbtalk");
+      if (essay_bar_comtainer !== null) {
+        essay_bar_comtainer.onmouseenter = function () {
+          essay_bar_swiper.autoplay.stop();
+        };
+        essay_bar_comtainer.onmouseleave = function () {
+          essay_bar_swiper.autoplay.start();
+        };
+      }
+    }, 100);
   },
 };
 
+anzhiyu.initIndexEssay();
 anzhiyu.changeTimeInEssay();
 anzhiyu.reflashEssayWaterFall();
+
 
 //- 瀑布流
 function waterfall(a) {
@@ -157,3 +192,14 @@ function waterfall(a) {
     var t = f(a);
     window.addEventListener ? window.addEventListener("resize", k) : (document.body.onresize = k);
   }
+
+if (document.querySelector('#bber-talk')) {
+      var swiper = new Swiper('.swiper-container', {
+        direction: 'vertical', // 垂直切换选项
+        loop: true,
+        autoplay: {
+        delay: 3000,
+        pauseOnMouseEnter: true
+      },
+      });
+    }

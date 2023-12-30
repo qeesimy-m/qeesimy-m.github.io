@@ -1,0 +1,19 @@
+.top {
+  display: none;
+}
+
+.live-bg {
+  display: none;
+}
+
+.main-hero-waves-area {
+  display: none;
+}
+
+.waves-area .waves-svg {
+  display: none;
+}
+
+#page-header {
+  background: transparent !important;
+}

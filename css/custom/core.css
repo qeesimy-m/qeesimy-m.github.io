@@ -1,0 +1,227 @@
+/* 颜色 */
+/* ---------- start ---------- */
+/* root伪类指定全局颜色 */
+:root {
+    --theme-color: #61649f !important;
+    --color-darkblue: var(--theme-color);
+    --btn-bg: var(--theme-color) !important;
+    --scrollbar-color: var(--theme-color) !important;
+    --border-style: var(--theme-border);
+    /* 代码框行数背景色 */
+    --hlnumber-bg: #282c34;
+    /* 代码框顶部背景色 */
+    --hltools-bg: #1c1c1c;
+    /* 代码框背景色 */
+    --hl-bg: #282c34;
+  }
+
+/* 透明度与边框样式 */
+:root {
+  --trans-light: rgba(255, 255, 255, 0.88);
+  --trans-dark: rgba(25, 25, 25, 0.88);
+  --theme-border: 1px solid var(--theme-color);
+  --theme-shadow: 0 0 5px var(--zero-theme);
+}
+
+/* 昼夜变化样式 */
+:root {
+  --trans: rgba(255, 255, 255, 0.88);
+  --font-color: #363636;
+  --card-bg: rgba(255,255,255,0.45);
+  --footer-bg: linear-gradient(to bottom,transparent 0%,rgba(255,255,255,0.7) 40%);
+  --font-grey: #888888;
+  }
+
+[data-theme='dark'] {
+  --trans: rgba(25, 25, 25, 0.88);
+  --font-color: #f7f7fa;
+  --card-bg: rgba(0,0,0,0.7);
+  --footer-bg: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.7) 40%);
+  --font-grey: #BBBBBB;
+  }
+
+/* 复杂颜色 */
+:root{
+  --zero-white: #fff;
+  --zero-white-op: rgba(255,255,255,0.2);
+  --zero-black: #000;
+  --zero-black-op: rgba(0,0,0,0.2);
+  --zero-none: #00000000;
+  --zero-gray: #999999;
+  --zero-gray-op: #9999992b;
+  --zero-vip: #e5a80d;
+  --zero-main: var(--zero-theme);
+  --zero-main-op: var(--zero-theme-op);
+  --zero-main-op-deep: var(--zero-theme-op-deep);
+  --zero-main-none: var(--zero-theme-none);
+  --zero-shadow-theme: 0 8px 12px -3px var(--zero-theme-op);
+  --zero-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0,.15);
+  --zero-shadow-main: 0 8px 12px -3px var(--zero-main-op);
+  --zero-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234,.20);
+  --zero-shadow-white: 0 8px 12px -3px rgba(255, 255, 255,.20);
+  --zero-shadow-black: 0 0 12px 4px rgba(0, 0, 0,.05);
+  --zero-shadow-yellow: 0px 38px 77px -26px rgba(255, 201, 62,.12);
+  --zero-shadow-red: 0 8px 12px -3px #ee7d7936;
+  --zero-shadow-green: 0 8px 12px -3px #87ee7936;
+  --zero-logo-color: linear-gradient(215deg,#4584ff 0%,#cf0db9 100%);
+  --zero-snackbar-time: 5s;
+  --style-border: 1px solid var(--zero-card-border);
+  --style-border-always: 1px solid var(--zero-card-border);
+  --style-border-hover: 1px solid var(--zero-main);
+  --style-border-hover-always: 1px solid var(--zero-main);
+  --style-border-dashed: 1px dashed var(--zero-theme-op);
+}
+
+[data-theme=light] {
+  --zero-theme: var(--theme-color);
+  --zero-theme-op: #4259ef23;
+  --zero-theme-op-deep: #343774;
+  --zero-theme-none: #4259ef01;
+  --zero-blue: #425AEF;
+  --zero-red: #D8213C;
+  --zero-pink: #FF7C7C;
+  --zero-green: #28a63f;
+  --zero-yellow: #c28b00;
+  --zero-yellow-op: #d99c001a;
+  --zero-orange: #e38100;
+  --zero-fontcolor: #363636;
+  --zero-background: #f7f9fe;
+  --zero-reverse: #000;
+  --zero-maskbg: rgba(255, 255, 255, 0.6);
+  --zero-maskbgdeep: rgba(255, 255, 255, 0.85);
+  --zero-hovertext: var(--zero-main);
+  --zero-ahoverbg: #F7F7FA;
+  --zero-lighttext: var(--zero-main);
+  --zero-secondtext: rgba(60, 60, 67, 0.6);
+  --zero-scrollbar: rgba(60, 60, 67, 0.4);
+  --zero-card-btn-bg: #edf0f7;
+  --zero-post-blockquote-bg: #fafcff;
+  --zero-post-tabs-bg: #f2f5f8;
+  --zero-secondbg: #f1f3f8;
+  --zero-shadow-nav:0 5px 12px -5px rgba(102, 68, 68, 0.05);
+  --zero-card-bg: #fff;
+  --zero-card-bg-op: var(--zero-black-op);
+  --zero-card-bg-none: rgba(255, 255, 255, 0);
+  --zero-shadow-lightblack:0 5px 12px -5px rgba(102, 68, 68, 0.00);
+  --zero-shadow-light2black:0 5px 12px -5px rgba(102, 68, 68, 0.00);
+  --zero-card-border: #e3e8f7;
+  --zero-shadow-border: 0 8px 16px -4px #2c2d300c;
+  --style-border-forever: 2px solid var(--zero-main);
+}
+
+[data-theme=dark] {
+  --zero-theme: var(--theme-color);
+  --zero-theme-op: #4259ef23;
+  --zero-theme-op-deep: #343774;
+  --zero-theme-none: #4259ef01;
+  --zero-blue: #0084FF;
+  --zero-red: #FF3842;
+  --zero-pink: #FF7C7C;
+  --zero-green: #57bd6a;
+  --zero-yellow: #ffc93e;
+  --zero-yellow-op: #ffc93e30;
+  --zero-orange: #ff953e;
+  --zero-fontcolor: #F7F7FA;
+  --zero-background: #18171d;
+  --zero-reverse: #fff;
+  --zero-maskbg: rgba(0,0,0, 0.6);
+  --zero-maskbgdeep: rgba(0,0,0, 0.85);
+  --zero-hovertext: #0A84FF;
+  --zero-ahoverbg: #fff;
+  --zero-lighttext: #f2b94b;
+  --zero-secondtext: #a1a2b8;
+  --zero-scrollbar: rgba(200, 200, 223, 0.4);
+  --zero-card-btn-bg: #30343f;
+  --zero-post-blockquote-bg: #000;
+  --zero-post-tabs-bg: #121212;
+  --zero-secondbg: #30343f;
+  --zero-shadow-nav:0 5px 20px 0px rgba(28, 28, 28, 0.4);
+  --zero-card-bg: #1d1e22;
+  --zero-card-bg-op: var(--zero-white-op);
+  --zero-card-bg-none: #1d1b2600;
+  --zero-shadow-lightblack:0 5px 12px -5px rgba(102, 68, 68, 0.0);
+  --zero-shadow-light2black:0 5px 12px -5px rgba(102, 68, 68, 0.0);
+  --zero-card-border: #282829;
+  --zero-shadow-border: 0 8px 16px -4px #00000050;
+  --style-border-forever: 2px solid var(--zero-lighttext);
+}
+/* ---------- end ---------- */
+
+
+/* 字体 */
+/* ---------- start ---------- */
+/* 格式示例
+@font-face {
+  font-family: 'webfont';
+  font-display: swap;
+  src: url('.eot') format('embedded-opentype'),
+       url('.woff2') format('woff2'),
+       url('.woff') format('woff'),
+       url('.ttf') format('truetype'),
+       url('.svg') format('svg'),
+       url('.otf') format('opentype');
+}
+*/
+
+@font-face {
+  font-family: 'Exo';
+  font-display: swap;
+  src: url('https://picbed.zeroqsm.top/font/Exo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SerifSC';
+  font-display: swap;
+  src: url('https://picbed.zeroqsm.top/font/SourceHanSerifSC-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'FZXS';
+  font-display: swap;
+  src: url('https://picbed.zeroqsm.top/font/FZXS12.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'HYTMR';
+  font-display: swap;
+  src: url('https://picbed.zeroqsm.top/font/HYTangMeiRen55W.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'ZZAW';
+  font-display: swap;
+  src: url('https://picbed.zeroqsm.top/font/ZhuZiAWan.woff2') format('woff2');
+}
+/* ---------- end ---------- */
+
+
+/* 图标 */
+/* ---------- start ---------- */
+/* 通用阿里图标设置 */
+.iconfont {
+    font-family: "iconfont" !important;
+    /* 这里可以自定义图标大小 */
+    font-size: 3em;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+/* 菜单栏图标 */
+svg.menu_icon {
+  width: 1.28em;
+  height: 1.28em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* 社交卡片图标 */
+svg.social_icon {
+    width: 1.20em;
+    height: 1.20em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+/* ---------- end ---------- */

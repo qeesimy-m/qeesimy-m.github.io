@@ -1,0 +1,125 @@
+/* 雪花特效 */
+/* ---------- start ---------- */
+#snow{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -2;
+}
+/* ---------- end ---------- */
+
+
+/* 帧率显示 */
+/* ---------- start ---------- */
+#fps {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1919810;
+}
+[data-theme="light"] #fps {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: var(--backdrop-filter);
+  padding: 4px;
+  border-radius: 4px;
+}
+[data-theme="dark"] #fps {
+  background-color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: var(--backdrop-filter);
+  padding: 4px;
+  border-radius: 4px;
+}
+/* ---------- end ---------- */
+
+
+/* 背景宇宙星光 */
+/* ---------- start ---------- */
+#universe{
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */
+  z-index: -1;
+}
+/* ---------- end ---------- */
+
+
+/* 人潮汹涌banner */
+/* ---------- start ---------- */
+#random{
+  background-color: var(--zero-white)!important;
+  border-radius: 8px;
+  margin-right: 10px !important;
+  background-size:cover;
+  color:var(--zero-white);
+  font-size:44px;
+  position: relative;
+  margin: 0 !important;
+  height: 100%;
+}
+#random-banner{
+  width:100%!important;
+  height:100%!important;
+  border-radius:8px;
+}
+#random-hover{
+  position:absolute;
+  right:0%;
+  height:100%!important;
+  color: #0000;
+  border-radius: 8px;
+}
+#random-hover:hover{
+ color:#ffffff;
+ background-color: #425aefdd;
+ backdrop-filter: blur(10px) saturate(180%);
+ -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+/* ---------- end ---------- */
+
+
+/* 养鱼 */
+/* ---------- start ---------- */
+.fish_container{
+  z-index: -1;
+  width: "100%";
+  height: "160px";
+  margin: 0;
+  padding: 0;
+}
+/* ---------- end ---------- */
+
+
+/*  */
+/* ---------- start ---------- */
+
+/* ---------- end ---------- */
+
+
+/*  */
+/* ---------- start ---------- */
+
+/* ---------- end ---------- */
+
+
+/*  */
+/* ---------- start ---------- */
+
+/* ---------- end ---------- */
+
+
+/*  */
+/* ---------- start ---------- */
+
+/* ---------- end ---------- */
