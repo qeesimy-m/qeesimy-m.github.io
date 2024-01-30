@@ -1,0 +1,123 @@
+.top {
+  display: flex;
+  flex-flow: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  background: url(); /* 静态背景设置 */
+}
+
+.live-bg {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  z-index: -1;
+}
+
+.live-bg .video-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /*保证视频内容始终居中*/
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  /*保证视频充满屏幕*/
+  object-fit: cover;
+  min-height: 800px;
+  margin-top: 100px;
+}
+
+#site-info {
+  width: 100%;
+  color: #fff;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  text-shadow: 0 0 3px #000;
+  height: 120px;
+  text-align: center;
+  margin-top: 12rem;
+}
+
+#site-title {
+  font-size: 35px;
+  width: 100%;
+  display: block;
+  font-weight: 800;
+  margin-bottom: 6px;
+  padding: 0 17px;
+  border-bottom: 1px solid #fff;
+}
+
+#site-subtitle {
+  font-size: 25px;
+  font-weight: 700;
+  z-index: 0;
+  position: relative;
+  height: 2em;
+  overflow: hidden;
+}
+
+#scroll-down {
+  width: 100%;
+  cursor: pointer;
+}
+
+#scroll-down .scroll-down-effects {
+  position: relative;
+  width: 100%;
+  color: var(--light-grey);
+  font-size: 30px;
+}
+
+#scroll-down .scroll-down-effects {
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  line-height: 1.5;
+}
+
+#body-wrap.page.home #page-header {
+  height: 0 !important;
+}
+
+#page-header #site-info {
+  display: none !important;
+}
+
+#page-header #scroll-down {
+  display: none !important;
+}
+
+#web_bg{
+  background: none!important;
+  background-color: #f7f9fe!important;
+}
+[data-theme="dark"] #web_bg{
+  background: none!important;
+  background-color: #18181e!important;
+}
+
+#body-wrap.page.home .main-hero-waves-area {
+  width: 100%;
+  z-index: 5;
+  top: 34px;
+  position: relative;
+ }
+
+#body-wrap.post .main-hero-waves-area {
+ width: 100%;
+ position: absolute;
+ left: 0;
+ bottom: -11px;
+ z-index: 5;
+}
+.waves-area .waves-svg {
+ width: 100%;
+ height: 5rem;
+}
